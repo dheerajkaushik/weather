@@ -1,0 +1,17 @@
+/* Custom CSS for a background gradient and smooth transitions */
+body {
+    /* Uses dark-bg and 334155 (slate-700) from the Tailwind config */
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    font-family: 'Inter', sans-serif;
+}
+/* Custom glass effect (Tailwind utility classes handle most of this, but adding a touch of custom shadow/border) */
+.glass-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+/* Smooth state transitions for cleaner UI updates */
+#weather-display > * {
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}

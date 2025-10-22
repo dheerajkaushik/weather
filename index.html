@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Weather App</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configure Tailwind for custom styles and Inter font -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'deep-indigo': '#364F6B',
+                        'light-sky': '#E8F6F8',
+                        'accent-teal': '#4ECDC4',
+                        'dark-bg': '#1e293b',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Load Lucide Icons for aesthetic appeal -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Link External CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="flex items-center justify-center min-h-screen p-4 text-white">
+
+    <!-- HTML STRUCTURE -->
+    <div id="app-container" class="w-full max-w-lg">
+
+        <h1 class="text-4xl font-extrabold text-center mb-10 tracking-tight text-accent-teal">
+            The Horizon Weather
+        </h1>
+
+        <!-- Weather Card Container -->
+        <div class="glass-card p-6 md:p-10 rounded-3xl shadow-2xl">
+
+            <!-- Search Bar -->
+            <div class="flex flex-col sm:flex-row gap-3 mb-6">
+                <input
+                    type="text"
+                    id="city-input"
+                    placeholder="Enter city name (e.g., Tokyo)"
+                    class="flex-grow p-3 rounded-xl border border-white/30 bg-white/10 focus:ring-accent-teal focus:border-accent-teal text-white placeholder-gray-300 transition duration-300"
+                    onkeypress="if(event.key === 'Enter') document.getElementById('submit-btn').click()"
+                >
+                <button
+                    id="submit-btn"
+                    class="bg-accent-teal hover:bg-teal-400 text-deep-indigo font-bold py-3 px-6 rounded-xl shadow-lg transition duration-300 transform active:scale-95"
+                >
+                    Get Weather
+                </button>
+            </div>
+
+            <!-- Loading Spinner (Hidden by default) -->
+            <div id="loading-spinner" class="hidden text-center py-8">
+                <div class="animate-spin inline-block w-8 h-8 border-4 border-r-transparent border-accent-teal rounded-full"></div>
+            </div>
+
+            <!-- Error Message Area (Hidden by default) -->
+            <div id="error-message" class="hidden text-center bg-red-600/70 p-4 rounded-xl font-medium mb-4 transition duration-300">
+                <!-- Error content goes here -->
+            </div>
+
+            <!-- Weather Display Area (Hidden/Empty by default) -->
+            <div id="weather-display" class="hidden text-center mt-6">
+                <!-- Data will be dynamically inserted here -->
+                <div id="weather-icon" class="text-7xl mb-4 opacity-0 transform translate-y-4"></div>
+                <div id="temperature" class="text-6xl font-light mb-2 opacity-0 transform translate-y-4"></div>
+                <div id="description" class="text-2xl font-medium mb-4 opacity-0 transform translate-y-4"></div>
+                <div id="location" class="text-xl text-gray-300 mb-6 opacity-0 transform translate-y-4"></div>
+
+                <div class="flex justify-around text-center border-t border-white/20 pt-4 mt-4">
+                    <div class="opacity-0 transform translate-y-4" id="wind-speed-container">
+                        <i data-lucide="wind" class="w-6 h-6 mx-auto text-accent-teal mb-1"></i>
+                        <div id="wind-speed" class="text-lg font-semibold"></div>
+                        <p class="text-sm text-gray-400">Wind (m/s)</p>
+                    </div>
+                    <div class="opacity-0 transform translate-y-4" id="humidity-container">
+                        <i data-lucide="droplets" class="w-6 h-6 mx-auto text-accent-teal mb-1"></i>
+                        <div id="humidity" class="text-lg font-semibold"></div>
+                        <p class="text-sm text-gray-400">Humidity (%)</p>
+                    </div>
+                    <div class="opacity-0 transform translate-y-4" id="pressure-container">
+                        <i data-lucide="gauge" class="w-6 h-6 mx-auto text-accent-teal mb-1"></i>
+                        <div id="pressure" class="text-lg font-semibold"></div>
+                        <p class="text-sm text-gray-400">Pressure (hPa)</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div> <!-- End Weather Card -->
+
+    </div> <!-- End App Container -->
+
+    <!-- Link External JavaScript -->
+    <script type="module" src="script.js"></script>
+</body>
+</html>
