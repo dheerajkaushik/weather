@@ -3,6 +3,9 @@
 A sleek, modern, and responsive **Weather Application** built using **HTML**, **Tailwind CSS**, and **JavaScript (ES6)**.  
 It fetches real-time weather data from the **OpenWeatherMap API** and displays it with smooth transitions, minimalist design, and emoji-based weather icons.
 
+<img width="1019" height="870" alt="image" src="https://github.com/user-attachments/assets/0c5656d6-bc19-446b-9744-3ccadc54d10f" />
+
+
 ---
 
 ## 🚀 Features
