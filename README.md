@@ -1,5 +1,7 @@
 # 🌤️ The Horizon Weather — Modern Weather App
 
+You can acess the site here: https://dheerajkaushik.github.io/weather/
+
 A sleek, modern, and responsive **Weather Application** built using **HTML**, **Tailwind CSS**, and **JavaScript (ES6)**.  
 It fetches real-time weather data from the **OpenWeatherMap API** and displays it with smooth transitions, minimalist design, and emoji-based weather icons.
 
